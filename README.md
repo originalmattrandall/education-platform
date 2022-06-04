@@ -10,6 +10,7 @@ app state
 computations
 analytics tracking
 constants
+services
 
 
 ### Infrastructure
@@ -33,5 +34,5 @@ The project uses the dinero.js package to do conversions and handle money.
 #### Example usages
 ``` var formattedCost = Dinero({ amount: 4995 }).toFormat('$0,0.00') ```
 
-#### Resources on Deniro library
+#### Resources on Dinero library
 https://www.honeybadger.io/blog/currency-money-calculations-in-javascript/
