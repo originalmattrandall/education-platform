@@ -1,7 +1,7 @@
-import Dinero from 'dinero.js';
 import { FormEventHandler } from 'react';
+import { SubmitHandler } from 'react-hook-form';
 import './App.css';
-import { LoginForm } from './presentation/components/loginform/LoginForm';
+import { LoginForm, LoginFormElements } from './presentation/components/loginform/LoginForm';
 import { VerticalNavBar } from './presentation/components/verticalnavbar/VerticalNavBar';
 
 function App() {
@@ -16,8 +16,8 @@ function App() {
 
 export default App;
 
-const onSubmit: FormEventHandler = (event) => {
-  event.preventDefault()
+const onSubmit: SubmitHandler<LoginFormElements> = (event) => {
 
-  console.log("form submitted")
+  console.log(event.nameInput)
+  console.log(event.passwordInput)
 }
