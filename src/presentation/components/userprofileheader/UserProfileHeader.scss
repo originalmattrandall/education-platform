@@ -1,0 +1,45 @@
+.user-profile-header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-top: 15%;
+}
+
+.user-profile-details{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__user-photo{
+        position: relative;
+        width: 80px;
+        height: 80px;
+        background-image: linear-gradient(45deg, rgba(208,230,234,1) 0%, rgba(246,246,189,1) 100%);
+        padding: 4px;
+        border-radius: 24px;
+
+        img {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+            border-radius: 24px;
+        }
+    }
+
+    &__username{
+        color: #fff;
+
+        > p {
+            padding: 5px;
+        }
+    }
+
+    &__profile-link{
+        text-decoration: none;
+        color: #fff;
+        font-size: 12px;
+        opacity: 50%;
+    }
+}

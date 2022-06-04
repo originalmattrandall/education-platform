@@ -1,0 +1,36 @@
+.course-for-sale{
+    background-color: #F6F6BD;
+    width: 90%;
+    padding: 15px 15px;
+    margin: 0 5%;
+    box-sizing: border-box;
+    height: 200px;
+    border-radius: 24px;
+
+    .course-details{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: left;
+        height: 100%;
+    
+        > h1 {
+            color: rgba(55,55,55,1)
+        }
+
+        &__tag-container{
+            width: 100%;
+        }
+
+        &__tag{
+            display: inline-block;
+            background-color: #fff;
+            border-radius: 24px;
+            padding: 5px 8px;
+        }
+
+        &__tag:not(:last-child) {
+            margin-right: 10px;
+        }
+    }
+}

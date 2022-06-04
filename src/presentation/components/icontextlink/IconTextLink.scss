@@ -1,0 +1,29 @@
+.icon-text-link{
+    width: 180px;
+    padding: 10px 0;
+    display: flex;
+    opacity: 50%;
+    transition: all .3s ease-in-out;
+
+    > a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    &__icon {
+        color: #fff;
+        padding-right:20px;
+
+        &.active{
+            color: #F6F6BD
+        }
+    }
+
+    &.active{
+        opacity: 100%;
+    }
+}
+
+.icon-text-link:hover {
+    opacity: 100%;
+}
