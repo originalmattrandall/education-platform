@@ -1,6 +1,5 @@
 # Educational Learning Platform
 
-
 ## Folder layout and clean code layering
 ### Application
 This is where all the business logic should be contained.
@@ -36,3 +35,15 @@ The project uses the dinero.js package to do conversions and handle money.
 
 #### Resources on Dinero library
 https://www.honeybadger.io/blog/currency-money-calculations-in-javascript/
+
+
+## Project Setup (add more details to this)
+1. Clone repo
+2. Install and setup nodejs: https://nodejs.org/en/
+3. From project root folder run ```npm install```
+4. To sart project locally run ```npm start```
+
+
+## Other project resources
+
+Material icons being used: https://mui.com/material-ui/material-icons/

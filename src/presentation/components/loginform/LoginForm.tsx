@@ -16,7 +16,7 @@ export const LoginForm = ({onSubmit}: LoginFormParams) => {
 
     const [passwordFieldType, setPasswordFieldType] = useState(true)
 
-    const { register, handleSubmit, formState: { errors }} = useForm<LoginFormElements>()
+    const {register, handleSubmit, formState: { errors }} = useForm<LoginFormElements>()
     const submitHandler = handleSubmit(onSubmit)
 
     const togglePasswordVisibility = () => {
