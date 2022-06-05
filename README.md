@@ -45,5 +45,5 @@ https://www.honeybadger.io/blog/currency-money-calculations-in-javascript/
 
 
 ## Other project resources
-
+React Hook Form: https://react-hook-form.com/
 Material icons being used: https://mui.com/material-ui/material-icons/
