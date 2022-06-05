@@ -1,10 +1,11 @@
 import './LoginForm.scss'
 
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 
 interface LoginFormParams {
-    onSubmit: SubmitHandler<LoginFormElements>
+    onSubmit: SubmitHandler<LoginFormElements>,
+    children?: React.ReactNode
 }
 
 export type LoginFormElements = {
@@ -12,7 +13,7 @@ export type LoginFormElements = {
     passwordInput: string
 }
 
-export const LoginForm = ({onSubmit}: LoginFormParams) => {
+export const LoginForm = ({onSubmit, children}: LoginFormParams) => {
 
     const [passwordFieldType, setPasswordFieldType] = useState(true)
 
@@ -24,6 +25,9 @@ export const LoginForm = ({onSubmit}: LoginFormParams) => {
     }
 
     return <div className='login-container'>
+
+        {displayHeader(children)}
+        
         <form className='login-form' onSubmit={submitHandler}>
             <div className='login-form__input-container'>
                 <label htmlFor='name'>
@@ -55,4 +59,12 @@ export const LoginForm = ({onSubmit}: LoginFormParams) => {
             <input className='login-form__submit-button' type='submit' value='Sign In' />
         </form>
     </div>
+}
+
+const displayHeader = (children: React.ReactNode) => {
+    if(!children) return
+
+    return <div className='login-heading'>
+            {children}
+        </div>
 }

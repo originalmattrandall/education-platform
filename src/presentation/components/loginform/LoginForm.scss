@@ -1,18 +1,29 @@
 .login-container{
     display: inline-block;
-    padding: 50px;
     border: 2px solid #242424;
-    border-radius: 24px;
-    //background: linear-gradient(0deg, rgba(19,19,19,1) 0%, rgba(55,55,55,1) 100%);
+    border-radius: 27px;
     color: #242424;
-    background-color: #82B4FF;
+    background-color: #fff;
     box-shadow: 5px 5px rgba(36, 36, 36, 0.5);
+
+    .login-heading{
+        background-color: #82B4FF;
+        border-top-left-radius: 24px;
+        border-top-right-radius: 24px;
+        border-bottom: 2px solid #242424;
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        padding: 10px 0;
+    }
 
     .login-form{
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        margin: 50px;
+        box-sizing: border-box;
 
         &__input-container{
             display: flex;

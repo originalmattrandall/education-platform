@@ -4,13 +4,7 @@ import { VerticalNavBar } from './presentation/components/verticalnavbar/Vertica
 
 function App() {
   return (
-    <div className="App">
-      <VerticalNavBar />
-
-      <LoginForm 
-        onSubmit={(event) => {
-          console.log('form submitted')
-        }}/>
+    <div className="App primary-background grid-background">
     </div>
   );
 }
