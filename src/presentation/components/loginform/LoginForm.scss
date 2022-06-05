@@ -1,9 +1,12 @@
 .login-container{
     display: inline-block;
     padding: 50px;
+    border: 2px solid #242424;
     border-radius: 24px;
-    background: linear-gradient(0deg, rgba(19,19,19,1) 0%, rgba(55,55,55,1) 100%);
-    color: #fff;
+    //background: linear-gradient(0deg, rgba(19,19,19,1) 0%, rgba(55,55,55,1) 100%);
+    color: #242424;
+    background-color: #82B4FF;
+    box-shadow: 5px 5px rgba(36, 36, 36, 0.5);
 
     .login-form{
         display: flex;
@@ -19,19 +22,18 @@
         }
 
         &__field-error{
-            color: #ff6961;
+            color: rgba(36, 36, 36, 0.8);
             font-size: 16px;
         }
 
         &__submit-button{
             width: 100%;
             font-size: 18px;
-            background-image: linear-gradient(45deg, rgba(208,230,234,1) 0%, rgba(246,246,189,1) 100%);
             cursor: pointer;
-
-            &:hover{
-                background-image: linear-gradient(45deg, rgba(208,230,234,1) 100%, rgba(246,246,189,1) 0%);
-            }
+            background-color: #FF93F4;
+            border: 2px solid #242424;
+            border-radius: 5px;
+            box-shadow: 3px 3px rgba(36, 36, 36, 0.5);
         }
     }
 }

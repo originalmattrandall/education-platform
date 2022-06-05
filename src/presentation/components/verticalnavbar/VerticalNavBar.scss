@@ -4,18 +4,22 @@
     width: 100%;
     max-width: 250px;
     height: 100vh;
-    background: linear-gradient(0deg, rgba(19,19,19,1) 0%, rgba(55,55,55,1) 100%);
+    background-color: #242424;
+    //background: linear-gradient(0deg, rgba(19,19,19,1) 0%, rgba(55,55,55,1) 100%);
     position: fixed;
     transition: all .3s ease-in-out;
+    box-shadow: 2px 0 rgba(36, 36, 36, 0.5);
 
     &__toggle{
         position: absolute;
         left: 95%;
         top: 45%;
-        background-image: linear-gradient(45deg, rgba(208,230,234,1) 0%, rgba(246,246,189,1) 100%);
+        background-color: #FF93F4;
+        //background-image: linear-gradient(45deg, rgba(208,230,234,1) 0%, rgba(246,246,189,1) 100%);
         cursor: pointer;
         border-radius: 12px;
         padding: 10px 5px;
+        box-shadow: 2px 2px rgba(36, 36, 36, 0.5);
     }
 
     &__icon{
