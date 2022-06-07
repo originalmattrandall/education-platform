@@ -1,11 +1,13 @@
 import './LoginForm.scss'
 
-import React, { useState } from 'react'
-import { SubmitHandler, useForm } from 'react-hook-form'
+import { SubmitHandler } from 'react-hook-form'
+import { FormInputField } from '../FormInputField/FormInputFIeld'
+import { Form } from '../Form/Form'
+import { useCustomForm } from '../../../application/hooks/CustomForm'
 
 interface LoginFormParams {
     onSubmit: SubmitHandler<LoginFormElements>,
-    children?: React.ReactNode
+    header?: React.ReactNode
 }
 
 export type LoginFormElements = {
@@ -13,41 +15,37 @@ export type LoginFormElements = {
     passwordInput: string
 }
 
-export const LoginForm = ({onSubmit, children}: LoginFormParams) => {
+export const LoginForm = ({onSubmit, header}: LoginFormParams) => {
 
-    const [passwordFieldType, setPasswordFieldType] = useState(true)
+    const {
+        errors: formErrors, 
+        passwordFieldType, 
+        register, 
+        submitHandler, 
+        togglePasswordVisibility
+    } = useCustomForm<LoginFormElements>(onSubmit)
 
-    const {register, handleSubmit, formState: { errors }} = useForm<LoginFormElements>()
-    const submitHandler = handleSubmit(onSubmit)
+    return <div className='login-form'>
 
-    const togglePasswordVisibility = () => {
-        setPasswordFieldType(!passwordFieldType)
-    }
+        {displayHeader(header)}
 
-    return <div className='login-container'>
+        <Form 
+            submitHandler={submitHandler} submitButtonValue={'Sign In'} >
+            <FormInputField 
+                requiredText='Please Enter a username'
+                formRegister={register}
+                label={'Name'} 
+                name={'nameInput'} 
+                type={'text'} 
+                id={'nameInput'} />
 
-        {displayHeader(children)}
-        
-        <form className='login-form' onSubmit={submitHandler}>
-            <div className='login-form__input-container'>
-                <label htmlFor='name'>
-                    UserName
-                </label>
-                <input 
-                    {...register('nameInput', { required: 'Please enter a username' })}
-                    type='text' name='nameInput' id='nameInput'/>
-                {errors.nameInput && <div className='login-form__field-error'>{errors.nameInput.message}</div>}
-            </div>
-
-            <div className='login-form__input-container'>
-                <label htmlFor='passwordInput'>
-                    Password
-                </label>
-                <input 
-                    {...register('passwordInput', { required: 'Please enter a password' })}
-                    type={passwordFieldType ? 'password' : 'text'} name='passwordInput' id='passwordInput'/>
-                {errors.passwordInput && <div className='login-form__field-error'>{errors.passwordInput.message}</div>}
-            </div>
+            <FormInputField 
+                requiredText='Please Enter a password'
+                formRegister={register}
+                label={'Password'} 
+                name={'passwordInput'} 
+                type={passwordFieldType ? 'password' : 'text'}
+                id={'passwordInput'} />
 
             <div className='login-form__input-container'>
                 <label htmlFor='passwordVisibilityToggle'>
@@ -55,16 +53,18 @@ export const LoginForm = ({onSubmit, children}: LoginFormParams) => {
                     Show Password
                 </label>
             </div>
+        </Form>
 
-            <input className='login-form__submit-button' type='submit' value='Sign In' />
-        </form>
+        {formErrors.nameInput && <div className='login-form__field-error'>{formErrors.nameInput.message}</div>}
+        {formErrors.passwordInput && <div className='login-form__field-error'>{formErrors.passwordInput.message}</div>}
+
     </div>
 }
 
-const displayHeader = (children: React.ReactNode) => {
-    if(!children) return
+const displayHeader = (header: React.ReactNode) => {
+    if(!header) return
 
-    return <div className='login-heading'>
-            {children}
+    return <div className='login-form__heading'>
+            {header}
         </div>
 }

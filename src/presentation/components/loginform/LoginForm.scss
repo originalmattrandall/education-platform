@@ -1,4 +1,4 @@
-.login-container{
+.login-form{
     display: inline-block;
     border: 2px solid #242424;
     border-radius: 27px;
@@ -6,7 +6,7 @@
     background-color: #fff;
     box-shadow: 5px 5px rgba(36, 36, 36, 0.5);
 
-    .login-heading{
+    &__heading{
         background-color: #82B4FF;
         border-top-left-radius: 24px;
         border-top-right-radius: 24px;
@@ -17,26 +17,14 @@
         padding: 10px 0;
     }
 
-    .login-form{
+    .form{
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         margin: 50px;
         box-sizing: border-box;
-
-        &__input-container{
-            display: flex;
-            flex-direction: column;
-            padding: 10px 0;
-            height: 50px;
-        }
-
-        &__field-error{
-            color: rgba(36, 36, 36, 0.8);
-            font-size: 16px;
-        }
-
+        
         &__submit-button{
             width: 100%;
             font-size: 18px;
@@ -45,6 +33,13 @@
             border: 2px solid #242424;
             border-radius: 5px;
             box-shadow: 3px 3px rgba(36, 36, 36, 0.5);
+        }
+
+        .form-field{
+            display: flex;
+            flex-direction: column;
+            padding: 10px 0;
+            height: 50px;
         }
     }
 }
