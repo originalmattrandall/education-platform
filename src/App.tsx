@@ -1,7 +1,5 @@
-import { SubmitHandler } from 'react-hook-form';
 import './App.css';
 import { LoginForm, LoginFormElements } from './presentation/components/loginform/LoginForm';
-import { VerticalNavBar } from './presentation/components/verticalnavbar/VerticalNavBar';
 
 function App() {
   return (
